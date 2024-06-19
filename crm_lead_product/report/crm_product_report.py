@@ -23,7 +23,7 @@ class ActivityReport(models.Model):
     date_conversion = fields.Datetime("Conversion Date", readonly=True)
     date_deadline = fields.Datetime("Deadline Date", readonly=True)
     date_open = fields.Datetime("Open Date", readonly=True)
-    lost_reason = fields.Many2one("crm.lost.reason", readonly=True)
+    lost_reason_id = fields.Many2one("crm.lost.reason", readonly=True)
     name = fields.Char("Lead Name", readonly=True)
     partner_id = fields.Many2one("res.partner", "Partner/Customer", readonly=True)
     partner_name = fields.Char("Contact Name", readonly=True)

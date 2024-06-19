@@ -173,7 +173,7 @@
                     <filter
                         string="Lost Reason"
                         name="lostreason"
-                        context="{'group_by':'lost_reason'}"
+                        context="{'group_by':'lost_reason_id'}"
                     />
                 </group>
             </search>
