@@ -14,6 +14,7 @@ class ActivityReport(models.Model):
     _description = "CRM Pipeline by Product Analysis"
     _rec_name = "id"
 
+    lead_id = fields.Many2one("crm.lead", "Lead/Opportunity", readonly=True)
     active = fields.Boolean(readonly=True)
     campaign_id = fields.Many2one("utm.campaign", "Campaing", readonly=True)
     country_id = fields.Many2one("res.country", "Country", readonly=True)
@@ -47,7 +48,7 @@ class ActivityReport(models.Model):
     def _select(self):
         return """
             SELECT
-                l.id,
+                ll.id,
                 l.active,
                 l.id as lead_id,
                 l.campaign_id,
